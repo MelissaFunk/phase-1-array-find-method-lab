@@ -71,12 +71,21 @@ const record = [
 // this returns correctly in dev tools, but error on learn test "TypeError: Cannot read property 'year' of undefined"
 
 const superbowlWin = (record) => {
-	if (record.find(dub => dub.result === 'W')) {
-	return record.find(dub => dub.result === 'W').year
-	} else {
-		return undefined
-	}
-} 
+  const result = record.find(element => element.result === 'W') 
+  if(result === undefined){
+      return undefined;
+  } else if (record.find(element => element.result === 'W')) {
+      return result.year;
+      }
+}
+
+// const superbowlWin = (record) => {
+// 	if (record.find(dub => dub.result === 'W')) {
+// 	return record.find(dub => dub.result === 'W').year
+// 	} else {
+// 		return undefined
+// 	}
+// } 
 
 
 
